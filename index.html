@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoarYeah - Mina AI-Appar</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 5rem 2rem 3rem 2rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid #334155;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>JOAR YEAH</h1>
+        <p>Välkommen till min hub av AI-skapade applikationer och projekt.</p>
+    </header>
+
+    <main>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <h2>Min Första App</h2>
+                    <p>En beskrivning av vad din första AI-app gör. Kanske ett spel, ett verktyg eller något helt annat!</p>
+                </div>
+                <a href="https://app1.joaryeah.com" class="btn" target="_blank">Öppna Appen</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h2>Nästa Projekt</h2>
+                    <p>Här kan du lägga till din andra app så fort den är klar. Bara att duplicera denna sektion i koden.</p>
+                </div>
+                <a href="https://app2.joaryeah.com" class="btn" target="_blank">Öppna Appen</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 JoarYeah. Skapat med AI och ren viljestyrka.</p>
+    </footer>
+
+</body>
+</html>
