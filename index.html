@@ -10,7 +10,7 @@
 
   :root {
     --bg:#faf6f0; --paper:#fffdf9; --ink:#2e2a26; --muted:#8a8177;
-    --line:#e8e0d3; --sage:#a8bfa0; --clay:#dcab8d; --sky:#a9c4d8; --lilac:#c9b8d6;
+    --line:#e8e0d3; --sage:#a8bfa0; --clay:#dcab8d; --sky:#a9c4d8; --lilac:#c9b8d6; --honey:#e3c675;
     --shadow:0 10px 26px rgba(60,50,40,.06);
   }
   * { box-sizing:border-box; }
@@ -34,9 +34,11 @@
   .card { display:flex; align-items:center; gap:20px; background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:22px 24px; box-shadow:var(--shadow); transition:transform .18s ease, box-shadow .18s ease; }
   .card.linkable:hover { transform:translateY(-2px); box-shadow:0 16px 34px rgba(60,50,40,.10); }
 
-  .swatch { width:50px; height:50px; flex:none; border-radius:14px; display:flex; align-items:center; justify-content:center; }
+  .swatch { width:50px; height:50px; flex:none; border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
   .swatch svg { width:22px; height:22px; }
-  .swatch.sage { background:var(--sage); } .swatch.clay { background:var(--clay); } .swatch.sky { background:var(--sky); } .swatch.lilac { background:var(--lilac); }
+  .swatch img { width:100%; height:100%; object-fit:cover; }
+  .swatch.sage { background:var(--sage); } .swatch.clay { background:var(--clay); } .swatch.sky { background:var(--sky); } .swatch.lilac { background:var(--lilac); } .swatch.honey { background:var(--honey); }
+  .swatch.icon-bg { background:var(--paper); border:1px solid var(--line); }
 
   .body { flex:1; min-width:0; }
   .body .row { display:flex; align-items:baseline; gap:10px; margin-bottom:5px; }
@@ -83,8 +85,8 @@
     </a>
 
     <a class="card linkable" href="https://sparapp.joaryeah.com" target="_blank" rel="noopener">
-      <div class="swatch clay">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M4 16l4.5-5 4 4 7-8" stroke="#2e2a26" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="swatch icon-bg">
+        <img src="favicon.ico" alt="Sparapp ikon" />
       </div>
       <div class="body">
         <div class="row"><h2>Sparapp</h2><span class="tag">Ekonomi</span></div>
@@ -93,16 +95,27 @@
       <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
 
-    <div class="card soon">
+    <a class="card linkable" href="https://milestones.joaryeah.com" target="_blank" rel="noopener">
+      <div class="swatch icon-bg">
+        <img src="milestones.ico" alt="Milestones ikon" />
+      </div>
+      <div class="body">
+        <div class="row"><h2>Milestones</h2><span class="tag">Firande</span></div>
+        <p>Koll på roliga kommande datum — 10 000 dagar, en miljard sekunder och annat värt att fira.</p>
+      </div>
+      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+
+    <a class="card linkable" href="https://tagluff.joaryeah.com" target="_blank" rel="noopener">
       <div class="swatch sky">
         <svg viewBox="0 0 24 24" fill="none"><path d="M4 17l4-10h8l4 10" stroke="#2e2a26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 17h18" stroke="#2e2a26" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
       <div class="body">
-        <div class="row"><h2>Tagluff</h2><span class="tag">Snart</span></div>
+        <div class="row"><h2>Tagluff</h2><span class="tag">Resa</span></div>
         <p>Resplanering for tagluffsaventyr 2026. För din inspo.</p>
       </div>
-      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg></div>
-    </div>
+      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
 
   </main>
 </body>
