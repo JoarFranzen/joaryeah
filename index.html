@@ -1,143 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JoarYeah - Mina AI-Appar</title>
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --accent-color: #38bdf8;
-            --text-muted: #94a3b8;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Joar Franzén</title>
+<meta name="description" content="Samlingssida för Joar Franzéns AI-projekt och verktyg." />
+<style>
+  :root {
+    --bg:#0f1117; --surface:#171a23; --surface2:#1e222d; --ink:#eef1f8; --muted:#8a93ab;
+    --line:#2a2f3d; --accent:#5b7cfa; --accent2:#7c5cfa; --shadow:0 20px 44px rgba(0,0,0,.35);
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); background-image:radial-gradient(circle at 15% 0%, rgba(91,124,250,.16), transparent 45%), radial-gradient(circle at 85% 15%, rgba(124,92,250,.14), transparent 40%); }
+  a { color:inherit; text-decoration:none; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            min-height: 100vh;
-        }
+  header { max-width:960px; margin:0 auto; padding:72px 24px 24px; text-align:center; }
+  header .kicker { font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; }
+  header h1 { font-size:clamp(32px,5vw,46px); margin:0 0 14px; letter-spacing:-1px; }
+  header p { color:var(--muted); font-size:16px; max-width:520px; margin:0 auto; line-height:1.6; }
 
-        header {
-            text-align: center;
-            padding: 5rem 2rem 3rem 2rem;
-        }
+  main { max-width:960px; margin:0 auto; padding:24px 24px 80px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:20px; margin-top:32px; }
 
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:26px; box-shadow:var(--shadow); transition:.2s ease; position:relative; overflow:hidden; display:flex; flex-direction:column; min-height:190px; }
+  .card:not(.disabled):hover { transform:translateY(-3px); border-color:#3a4058; background:var(--surface2); }
+  .card .icon { width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; background:linear-gradient(135deg,var(--accent),var(--accent2)); }
+  .card .icon svg { width:22px; height:22px; }
+  .card h2 { font-size:19px; margin:0 0 8px; letter-spacing:-.2px; }
+  .card p { color:var(--muted); font-size:14px; line-height:1.55; margin:0 0 18px; flex:1; }
+  .card .cta { font-size:13px; font-weight:700; color:var(--accent); display:inline-flex; align-items:center; gap:6px; }
+  .card .cta svg { width:14px; height:14px; transition:transform .15s ease; }
+  .card:not(.disabled):hover .cta svg { transform:translateX(3px); }
 
-        header p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-top: 1rem;
-        }
+  .card.disabled { opacity:.55; cursor:default; }
+  .card.disabled .icon { background:linear-gradient(135deg,#3a4058,#2a2f3d); }
+  .badge { position:absolute; top:18px; right:18px; font-size:10.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:999px; padding:4px 10px; }
 
-        main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            flex-grow: 1;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2rem;
-            border: 1px solid #334155;
-            transition: transform 0.2s, border-color 0.2s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            font-size: 1.5rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #0f172a;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 1rem;
-            transition: opacity 0.2s;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-    </style>
+  footer { max-width:960px; margin:0 auto; padding:30px 24px 60px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line); }
+  footer a { color:var(--accent); font-weight:600; }
+  footer a:hover { text-decoration:underline; }
+</style>
 </head>
 <body>
+  <header>
+    <div class="kicker">Joar Franzén</div>
+    <h1>Projekt och verktyg</h1>
+    <p>En samlingsplats för appar och verktyg jag bygger på fritiden — från mailmallar till sparande och resplanering.</p>
+  </header>
 
-    <header>
-        <h1>JOAR YEAH</h1>
-        <p>Välkommen till min hub av AI-skapade applikationer och projekt.</p>
-    </header>
+  <main>
+    <div class="grid">
 
-    <main>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <h2>Min Första App</h2>
-                    <p>En beskrivning av vad din första AI-app gör. Kanske ett spel, ett verktyg eller något helt annat!</p>
-                </div>
-                <a href="https://app1.joaryeah.com" class="btn" target="_blank">Öppna Appen</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h2>Nästa Projekt</h2>
-                    <p>Här kan du lägga till din andra app så fort den är klar. Bara att duplicera denna sektion i koden.</p>
-                </div>
-                <a href="https://app2.joaryeah.com" class="btn" target="_blank">Öppna Appen</a>
-            </div>
+      <a class="card" href="https://template.joaryeah.com" target="_blank" rel="noopener">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="#fff" stroke-width="1.6"/><path d="M8 9h8M8 13h5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
         </div>
-    </main>
+        <h2>Temailplate</h2>
+        <p>Bygg mailmallar med utbytbara fält, färgkodning och smart Excel-inklistring. Klistra in, fyll i, kopiera till Outlook.</p>
+        <span class="cta">Öppna appen
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
 
-    <footer>
-        <p>&copy; 2026 JoarYeah. Skapat med AI och ren viljestyrka.</p>
-    </footer>
+      <a class="card" href="https://joarfranzen.github.io/Sparapp/" target="_blank" rel="noopener">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-8" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h6v6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2>Sparapp</h2>
+        <p>Ett verktyg för att hålla koll på sparande och ekonomi över tid.</p>
+        <span class="cta">Öppna appen
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
 
+      <div class="card disabled">
+        <span class="badge">Kommer snart</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 18l4-11h8l4 11" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 18h20" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h2>Tågluff</h2>
+        <p>Planera och organisera tågluffsresan — under utveckling. Länken aktiveras här så fort projektet är publicerat.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    Byggt av Joar Franzén · Kod på <a href="https://github.com/JoarFranzen" target="_blank" rel="noopener">GitHub</a>
+  </footer>
 </body>
 </html>
