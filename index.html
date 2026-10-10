@@ -1,157 +1,33 @@
 <!doctype html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Joar Franzéns små appar och sidoprojekt.">
 <title>Joars appar!</title>
-<meta name="description" content="Samlingssida for Joar Franzens projekt." />
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
-
-  :root {
-    --bg:#faf6f0; --paper:#fffdf9; --ink:#2e2a26; --muted:#8a8177;
-    --line:#e8e0d3; --sage:#a8bfa0; --clay:#dcab8d; --sky:#a9c4d8; --lilac:#c9b8d6; --honey:#e3c675;
-    --shadow:0 10px 26px rgba(60,50,40,.06);
-  }
-  * { box-sizing:border-box; }
-  body {
-    margin:0; min-height:100vh; background:var(--bg); color:var(--ink);
-    font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;
-    background-image:
-      radial-gradient(circle at 8% 12%, rgba(168,191,160,.22), transparent 42%),
-      radial-gradient(circle at 92% 18%, rgba(220,171,141,.20), transparent 40%),
-      radial-gradient(circle at 50% 92%, rgba(201,184,214,.18), transparent 45%);
-  }
-  a { color:inherit; text-decoration:none; }
-
-  header { max-width:720px; margin:0 auto; padding:96px 24px 34px; text-align:center; }
-  header .mark { width:52px; height:52px; margin:0 auto 26px; border-radius:16px; background:var(--paper); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:22px; font-weight:600; box-shadow:var(--shadow); }
-  header h1 { font-family:'Fraunces',serif; font-weight:600; font-size:clamp(34px,6vw,52px); margin:0 0 16px; letter-spacing:-.5px; line-height:1.05; }
-  header p { color:var(--muted); font-size:16px; line-height:1.65; max-width:420px; margin:0 auto; }
-
-  main { max-width:720px; margin:0 auto; padding:10px 24px 90px; display:flex; flex-direction:column; gap:16px; }
-
-  .card { display:flex; align-items:center; gap:20px; background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:22px 24px; box-shadow:var(--shadow); transition:transform .18s ease, box-shadow .18s ease; }
-  .card.linkable:hover { transform:translateY(-2px); box-shadow:0 16px 34px rgba(60,50,40,.10); }
-
-  .swatch { width:50px; height:50px; flex:none; border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-  .swatch svg { width:22px; height:22px; }
-  .swatch img { width:100%; height:100%; object-fit:cover; }
-  .swatch.sage { background:var(--sage); } .swatch.clay { background:var(--clay); } .swatch.sky { background:var(--sky); } .swatch.lilac { background:var(--lilac); } .swatch.honey { background:var(--honey); }
-  .swatch.icon-bg { background:var(--paper); border:1px solid var(--line); }
-
-  .body { flex:1; min-width:0; }
-  .body .row { display:flex; align-items:baseline; gap:10px; margin-bottom:5px; }
-  .body h2 { font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin:0; letter-spacing:-.2px; }
-  .body .tag { font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:999px; padding:3px 9px; }
-  .body p { margin:0; color:var(--muted); font-size:14px; line-height:1.55; }
-
-  .go { flex:none; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--ink); transition:.18s ease; }
-  .card.linkable:hover .go { background:var(--ink); color:var(--paper); border-color:var(--ink); }
-  .go svg { width:14px; height:14px; }
-
-  .card.soon { opacity:.6; }
-  .card.soon .swatch { background:var(--line); }
-  .card.soon .go { color:var(--muted); }
-
-  footer { max-width:720px; margin:0 auto; padding:20px 24px 70px; text-align:center; color:var(--muted); font-size:13px; }
-  footer a { font-weight:600; border-bottom:1px solid var(--line); }
-  footer a:hover { border-color:var(--ink); }
-
-  @media (max-width:520px) {
-    .card { padding:18px; gap:14px; }
-    .swatch { width:42px; height:42px; }
-  }
+:root{--paper:#f6f4ed;--ink:#242b26;--muted:#58635b;--line:#bdc4b7;--accent:#c5d7a6}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Courier New",Courier,monospace;font-size:15px;line-height:1.65}a{color:inherit}a:focus-visible{outline:3px solid var(--ink);outline-offset:5px}.skip{position:absolute;left:20px;top:-100px;padding:8px 14px;background:var(--paper);z-index:2}.skip:focus{top:12px}.wrap{max-width:980px;margin:auto;padding:0 38px}.masthead{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:27px 0;border-bottom:1px solid var(--ink);font-size:13px}.wordmark{font-weight:700;text-decoration:none;letter-spacing:-.5px}.masthead nav a{text-decoration:none;border-bottom:1px solid var(--line)}.masthead nav a:hover{border-color:var(--ink)}header{padding:76px 0 64px;max-width:760px}.eyebrow{font-size:12px;letter-spacing:.06em;margin:0 0 22px;color:var(--muted)}h1{font-family:Arial,Helvetica,sans-serif;font-size:clamp(48px,8.5vw,90px);line-height:.98;letter-spacing:-.065em;font-weight:700;margin:0 0 29px}h1 span{display:inline-block;background:var(--accent);padding:0 .1em .06em;transform:rotate(-2deg)}.intro{max-width:510px;margin:0;font-size:16px}.index-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--ink)}.index-heading h2{font-size:12px;font-weight:400;margin:0;text-transform:uppercase;letter-spacing:.08em}.index-heading span{font-size:12px;color:var(--muted)}.projects{list-style:none;margin:0;padding:0;counter-reset:project}.projects li{counter-increment:project;border-bottom:1px solid var(--line)}.project{display:grid;grid-template-columns:28px 48px 1fr 28px;gap:22px;padding:29px 10px 29px 0;text-decoration:none;transition:background .16s ease}.project:before{content:counter(project,decimal-leading-zero);color:var(--muted);font-size:12px;padding-top:7px}.project:hover{background:#e9eddf}.icon{width:48px;height:48px;object-fit:cover;border-radius:5px;border:1px solid var(--line);margin-top:3px}.title-row{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:7px}.title-row h3{font-family:Arial,Helvetica,sans-serif;font-size:24px;line-height:1.2;letter-spacing:-.035em;margin:0;font-weight:700}.tag{font-size:11px;color:var(--muted)}.project p{color:var(--muted);margin:0;max-width:570px;font-size:13px;line-height:1.7}.arrow{font-family:Arial,Helvetica,sans-serif;font-size:24px;line-height:1;margin-top:3px;transition:transform .16s ease}.project:hover .arrow{transform:translate(3px,-3px)}footer{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:31px 0 58px;color:var(--muted);font-size:11px}footer a{text-underline-offset:4px}@media(max-width:600px){.wrap{padding:0 22px}.masthead{font-size:11px}header{padding:54px 0 45px}.intro{font-size:14px}.project{grid-template-columns:20px 36px 1fr 18px;gap:12px;padding:25px 0}.icon{width:36px;height:36px}.title-row{gap:5px 12px}.title-row h3{font-size:21px}.project p{font-size:12px}.arrow{font-size:20px}footer{align-items:flex-start;flex-direction:column;gap:7px}.index-heading span{font-size:10px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}h1 span{transform:none}}
 </style>
 </head>
 <body>
-  <header>
-    <div class="mark">J</div>
-    <h1>Tja! Jag heter Joar</h1>
-    <p>Jag gillar att pilla med AI och göra små appar. <br>Här hittar du dom!</p>
-  </header>
-
-  <main>
-
-    <a class="card linkable" href="https://pizza-diary.lovable.app" target="_blank" rel="noopener">
-      <div class="swatch icon-bg">
-          <img src="pizza-diary-icon.png" alt="Pizza diary ikon" />
-      </div>
-      <div class="body">
-        <div class="row"><h2>Pizza Diary</h2><span class="tag">Verktyg</span></div>
-        <p>Pizzanördarnas himmelrike. Logga dina degar, håll koll på varenda liten variabel. Ändra till nästa gång för att se förbättring.</p>
-      </div>
-      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-
-    <a class="card linkable" href="https://sparapp.joaryeah.com" target="_blank" rel="noopener">
-      <div class="swatch icon-bg">
-        <img src="favicon.ico" alt="Sparapp ikon" />
-      </div>
-      <div class="body">
-        <div class="row"><h2>Sparapp</h2><span class="tag">Ekonomi</span></div>
-        <p>Dreams kostar pengar. Här har du din egna manuella gratisversion som uppmanar dig att INVESTERA pengarna, inte bara ett mjäkigt sparkonto utan ränta.</p>
-      </div>
-      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-
-    <a class="card linkable" href="https://thisweek.joaryeah.com" target="_blank" rel="noopener">
-      <div class="swatch icon-bg">
-        <img src="https://thisweek.joaryeah.com/icon.jpg" alt="This Week ikon" />
-      </div>
-      <div class="body">
-        <div class="row"><h2>This Week</h2><span class="tag">Planering</span></div>
-        <p>Lite mindre kaos, en vecka i taget. Samla dina att-göra, välj en dag när det behövs och flytta resten till nästa vecka.</p>
-      </div>
-      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-
-    <a class="card linkable" href="https://milestones.joaryeah.com" target="_blank" rel="noopener">
-      <div class="swatch icon-bg">
-        <img src="milestones.ico" alt="Milestones ikon" />
-      </div>
-      <div class="body">
-        <div class="row"><h2>Milestones</h2><span class="tag">Firande</span></div>
-        <p>Håll koll på roliga kommande datum för dig och din familj och vänner - 10 000 dagar, en miljard sekunder och annat värt att fira.</p>
-      </div>
-      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-
-    
-    <a class="card linkable" href="https://temailplate.joaryeah.com" target="_blank" rel="noopener">
-      <div class="swatch icon-bg">
-          <img src="generated-image.png" alt="TeMailplate ikon" />
-      </div>
-      <div class="body">
-        <div class="row"><h2>TeMailplate</h2><span class="tag">Verktyg</span></div>
-        <p>Mailmallar med utbytbara fält. Ska du skriva många snarlika mail med små ändringar? Klistra in mailet, fyll i Placeholders, kopiera, skicka, drick ditt kaffe.</p>
-      </div>
-      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-
-    <a class="card linkable" href="https://imposter.joaryeah.com" target="_blank" rel="noopener">
-      <div class="swatch icon-bg">
-          <img src="music-imposter.png" alt="Music Imposter ikon" />
-      </div>
-      <div class="body">
-        <div class="row"><h2>Music Imposter</h2><span class="tag">Spel</span></div>
-        <p>Vem känner inte av viben?</p>
-      </div>
-      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-
-
-    <a class="card linkable" href="https://tagluff.joaryeah.com" target="_blank" rel="noopener">
-      <div class="swatch icon-bg">
-        <img src="tagluff.png" alt="Tagluff ikon" />
-      </div>
-      <div class="body">
-        <div class="row"><h2>Tågluff</h2><span class="tag">Resa</span></div>
-        <p>Resplanering for tågluffsaventyr 2026. För inspo.</p>
-      </div>
-      <div class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-
-  </main>
+<a class="skip" href="#appar">Hoppa till apparna</a>
+<div class="wrap">
+<div class="masthead"><a class="wordmark" href="/">joar / yeah.</a><nav aria-label="Huvudnavigation"><a href="https://github.com/JoarFranzen" target="_blank" rel="noopener noreferrer">github ↗</a></nav></div>
+<header><p class="eyebrow">SMÅ APPAR / SIDOPROJEKT</p><h1>Tja!<br>Jag heter <span>Joar.</span></h1><p class="intro">Jag gillar att pilla med AI och göra små appar. Här hittar du dom!</p></header>
+<main id="appar">
+<div class="index-heading"><h2>Projekthyllan</h2><span>07 appar / byggda med nyfikenhet</span></div>
+<ol class="projects">
+<li><a class="project" href="https://pizza-diary.lovable.app" target="_blank" rel="noopener noreferrer"><img class="icon" src="pizza-diary-icon.png" alt="" width="48" height="48"><div><div class="title-row"><h3>Pizza Diary</h3><span class="tag">Verktyg</span></div><p>Pizzanördarnas himmelrike. Logga dina degar, håll koll på varenda liten variabel. Ändra till nästa gång för att se förbättring.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="project" href="https://sparapp.joaryeah.com" target="_blank" rel="noopener noreferrer"><img class="icon" src="favicon.ico" alt="" width="48" height="48"><div><div class="title-row"><h3>Sparapp</h3><span class="tag">Ekonomi</span></div><p>Dreams kostar pengar. Här har du din egna manuella gratisversion som uppmanar dig att INVESTERA pengarna, inte bara ett mjäkigt sparkonto utan ränta.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="project" href="https://thisweek.joaryeah.com" target="_blank" rel="noopener noreferrer"><img class="icon" src="https://thisweek.joaryeah.com/icon.jpg" alt="" width="48" height="48"><div><div class="title-row"><h3>This Week</h3><span class="tag">Planering</span></div><p>Lite mindre kaos, en vecka i taget. Samla dina att-göra, välj en dag när det behövs och flytta resten till nästa vecka.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="project" href="https://milestones.joaryeah.com" target="_blank" rel="noopener noreferrer"><img class="icon" src="milestones.ico" alt="" width="48" height="48" loading="lazy"><div><div class="title-row"><h3>Milestones</h3><span class="tag">Firande</span></div><p>Håll koll på roliga kommande datum för dig och din familj och vänner - 10 000 dagar, en miljard sekunder och annat värt att fira.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="project" href="https://temailplate.joaryeah.com" target="_blank" rel="noopener noreferrer"><img class="icon" src="generated-image.png" alt="" width="48" height="48" loading="lazy"><div><div class="title-row"><h3>TeMailplate</h3><span class="tag">Verktyg</span></div><p>Mailmallar med utbytbara fält. Ska du skriva många snarlika mail med små ändringar? Klistra in mailet, fyll i Placeholders, kopiera, skicka, drick ditt kaffe.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="project" href="https://imposter.joaryeah.com" target="_blank" rel="noopener noreferrer"><img class="icon" src="music-imposter.png" alt="" width="48" height="48" loading="lazy"><div><div class="title-row"><h3>Music Imposter</h3><span class="tag">Spel</span></div><p>Vem känner inte av viben?</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="project" href="https://tagluff.joaryeah.com" target="_blank" rel="noopener noreferrer"><img class="icon" src="tagluff.png" alt="" width="48" height="48" loading="lazy"><div><div class="title-row"><h3>Tågluff</h3><span class="tag">Resa</span></div><p>Resplanering for tågluffsaventyr 2026. För inspo.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
+</ol>
+</main>
+<footer><span>Lite kod. Lite kaffe. En del pill.</span><a href="https://github.com/JoarFranzen/joaryeah" target="_blank" rel="noopener noreferrer">sidans källkod ↗</a></footer>
+</div>
 </body>
 </html>
