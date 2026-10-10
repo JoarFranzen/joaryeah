@@ -1,22 +1,315 @@
 <!doctype html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Joar Franzéns små appar och sidoprojekt.">
-<title>joar yeah</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Joars appar och små projekt.">
+  <meta name="theme-color" content="#f8f7f2">
+  <title>joar yeah</title>
+  <link rel="icon" href="favicon.ico">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8f7f2;
+      --ink: #30332e;
+      --soft-ink: #666a61;
+      --quiet: #888b81;
+      --rule: #e5e3da;
+      --pink: #f0dfdc;
+      --green: #e1e8dc;
+      --blue: #e0e8ed;
+      --yellow: #f0e9d4;
+      --lilac: #e9e3ee;
+      --white: #fffefa;
+    }
 
-<style>
-:root{color-scheme:light;--paper:#faf8f2;--ink:#353831;--muted:#74766d;--rule:#e7e3d9;--pink:#f1dfdc;--sage:#e0e7d9;--blue:#e0e8ed;--butter:#f0e8cd;--accent:#65745e}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Avenir Next",Avenir,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;font-size:16px}a{color:inherit}a:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:2px}.skip{position:absolute;left:18px;top:-80px;background:var(--paper);padding:10px;z-index:5}.skip:focus{top:12px}.wrap{width:min(100% - 56px,690px);margin:0 auto}.masthead{padding-top:34px;display:flex;align-items:center;justify-content:space-between}.wordmark{font-size:16px;letter-spacing:-.55px;font-weight:600;text-decoration:none}.wordmark span{color:#87977e}header{padding:94px 0 69px}h1{font-size:clamp(34px,5vw,43px);line-height:1.2;font-weight:450;letter-spacing:-1.45px;margin:0 0 18px}.intro{max-width:390px;font-size:16px;line-height:1.8;color:#66695f;margin:0}.projects{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}.projects li{border-bottom:1px solid var(--rule)}.project{display:grid;grid-template-columns:54px minmax(0,1fr) 18px;gap:20px;align-items:center;text-decoration:none;padding:24px 2px;transition:background-color .16s ease}.icon-wrap{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:var(--pink)}.projects li:nth-child(4n+2) .icon-wrap{background:var(--sage)}.projects li:nth-child(4n+3) .icon-wrap{background:var(--blue)}.projects li:nth-child(4n) .icon-wrap{background:var(--butter)}.icon{width:35px;height:35px;object-fit:contain;border-radius:8px}.meta{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0 0 5px}.meta h3{font-size:18px;line-height:1.35;letter-spacing:-.4px;font-weight:550;margin:0}.tag{font-size:11px;color:#77796f}.project p{font-size:13px;line-height:1.7;color:#707168;margin:0;max-width:500px}.arrow{font-size:18px;line-height:1;color:#77796f;opacity:.55;transition:transform .18s ease,opacity .18s ease}.project:hover .arrow{opacity:1;transform:translate(2px,-2px)}.project:hover .meta h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:#b8b7aa}@media(max-width:540px){.wrap{width:calc(100% - 40px)}.masthead{padding-top:25px}header{padding:70px 0 52px}h1{font-size:35px;letter-spacing:-1.2px;margin-bottom:15px}.intro{font-size:15px;max-width:300px}.project{grid-template-columns:46px minmax(0,1fr) 14px;gap:14px;padding:21px 0}.icon-wrap{width:46px;height:46px;border-radius:13px}.icon{width:30px;height:30px}.meta{gap:6px 9px}.meta h3{font-size:17px}.project p{font-size:12.5px;line-height:1.65}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
-</style></head><body><a class="skip" href="#appar">Hoppa till apparna</a><div class="wrap">
-<div class="masthead"><a class="wordmark" href="https://joaryeah.com">joar <span>yeah</span></a></div>
-<header><h1>Tja! Jag heter Joar.</h1><p class="intro">Jag gillar att pilla med AI och göra små appar. Här hittar du dom!</p></header>
-<main id="appar"><ul class="projects">
-<li><a class="project" href="https://pizza-diary.lovable.app" target="_blank" rel="noopener noreferrer"><div class="icon-wrap"><img class="icon" src="https://raw.githubusercontent.com/JoarFranzen/joaryeah/main/pizza-diary-icon.png" alt="" width="35" height="35"></div><div><div class="meta"><h3>Pizza Diary</h3><span class="tag">Verktyg</span></div><p>Pizzanördarnas himmelrike. Logga dina degar, håll koll på varenda liten variabel. Ändra till nästa gång för att se förbättring.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
-<li><a class="project" href="https://sparapp.joaryeah.com" target="_blank" rel="noopener noreferrer"><div class="icon-wrap"><img class="icon" src="https://raw.githubusercontent.com/JoarFranzen/joaryeah/main/favicon.ico" alt="" width="35" height="35"></div><div><div class="meta"><h3>Sparapp</h3><span class="tag">Ekonomi</span></div><p>Dreams kostar pengar. Här har du din egna manuella gratisversion som uppmanar dig att INVESTERA pengarna, inte bara ett mjäkigt sparkonto utan ränta.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
-<li><a class="project" href="https://thisweek.joaryeah.com" target="_blank" rel="noopener noreferrer"><div class="icon-wrap"><img class="icon" src="https://thisweek.joaryeah.com/icon.jpg" alt="" width="35" height="35"></div><div><div class="meta"><h3>This Week</h3><span class="tag">Planering</span></div><p>Lite mindre kaos, en vecka i taget. Samla dina att-göra, välj en dag när det behövs och flytta resten till nästa vecka.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
-<li><a class="project" href="https://milestones.joaryeah.com" target="_blank" rel="noopener noreferrer"><div class="icon-wrap"><img class="icon" src="https://raw.githubusercontent.com/JoarFranzen/joaryeah/main/milestones.ico" alt="" width="35" height="35" loading="lazy"></div><div><div class="meta"><h3>Milestones</h3><span class="tag">Firande</span></div><p>Håll koll på roliga kommande datum för dig och din familj och vänner - 10 000 dagar, en miljard sekunder och annat värt att fira.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
-<li><a class="project" href="https://temailplate.joaryeah.com" target="_blank" rel="noopener noreferrer"><div class="icon-wrap"><img class="icon" src="https://raw.githubusercontent.com/JoarFranzen/joaryeah/main/generated-image.png" alt="" width="35" height="35" loading="lazy"></div><div><div class="meta"><h3>TeMailplate</h3><span class="tag">Verktyg</span></div><p>Mailmallar med utbytbara fält. Ska du skriva många snarlika mail med små ändringar? Klistra in mailet, fyll i Placeholders, kopiera, skicka, drick ditt kaffe.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
-<li><a class="project" href="https://imposter.joaryeah.com" target="_blank" rel="noopener noreferrer"><div class="icon-wrap"><img class="icon" src="https://raw.githubusercontent.com/JoarFranzen/joaryeah/main/music-imposter.png" alt="" width="35" height="35" loading="lazy"></div><div><div class="meta"><h3>Music Imposter</h3><span class="tag">Spel</span></div><p>Vem känner inte av viben?</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
-<li><a class="project" href="https://tagluff.joaryeah.com" target="_blank" rel="noopener noreferrer"><div class="icon-wrap"><img class="icon" src="https://raw.githubusercontent.com/JoarFranzen/joaryeah/main/tagluff.png" alt="" width="35" height="35" loading="lazy"></div><div><div class="meta"><h3>Tågluff</h3><span class="tag">Resa</span></div><p>Resplanering for tågluffsaventyr 2026. För inspo.</p></div><span class="arrow" aria-hidden="true">↗</span></a></li>
-</ul></main></div></body></html>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 2px solid #75856b;
+      outline-offset: 5px;
+      border-radius: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 20px;
+      z-index: 2;
+      padding: 10px 12px;
+      background: var(--white);
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .page {
+      width: min(100% - 64px, 760px);
+      margin-inline: auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 30px;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.45px;
+      text-decoration: none;
+    }
+
+    .wordmark-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #b8c7ae;
+    }
+
+    .intro {
+      padding: 76px 0 48px;
+      max-width: 510px;
+    }
+
+    h1 {
+      margin: 0 0 13px;
+      font-size: clamp(34px, 5vw, 43px);
+      line-height: 1.18;
+      font-weight: 450;
+      letter-spacing: -1.5px;
+    }
+
+    .intro p {
+      max-width: 365px;
+      margin: 0;
+      color: var(--soft-ink);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .app-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    .app-list li { border-bottom: 1px solid var(--rule); }
+
+    .app-link {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) 20px;
+      align-items: center;
+      column-gap: 21px;
+      padding: 22px 1px;
+      text-decoration: none;
+    }
+
+    .app-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--pink);
+    }
+
+    .app-list li:nth-child(2) .app-icon { background: var(--green); }
+    .app-list li:nth-child(3) .app-icon { background: var(--blue); }
+    .app-list li:nth-child(4) .app-icon { background: var(--yellow); }
+    .app-list li:nth-child(5) .app-icon { background: var(--lilac); }
+    .app-list li:nth-child(6) .app-icon { background: var(--green); }
+    .app-list li:nth-child(7) .app-icon { background: var(--pink); }
+
+    .app-icon img {
+      display: block;
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 7px;
+    }
+
+    .app-heading {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 5px 12px;
+      margin-bottom: 5px;
+    }
+
+    .app-heading h2 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 550;
+      letter-spacing: -0.3px;
+    }
+
+    .category {
+      color: var(--quiet);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .description {
+      max-width: 555px;
+      margin: 0;
+      color: var(--soft-ink);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .arrow {
+      justify-self: end;
+      align-self: center;
+      color: var(--quiet);
+      font-size: 18px;
+      transition: transform 160ms ease, color 160ms ease;
+    }
+
+    .app-link:hover .arrow {
+      color: var(--ink);
+      transform: translate(2px, -2px);
+    }
+
+    .app-link:hover .app-heading h2 {
+      text-decoration: underline;
+      text-decoration-color: #c7c5b9;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 560px) {
+      .page { width: calc(100% - 40px); }
+      .topbar { padding-top: 24px; }
+      .intro { padding: 63px 0 38px; }
+      h1 { font-size: 35px; letter-spacing: -1.15px; }
+      .intro p { max-width: 320px; font-size: 14px; }
+      .app-link {
+        grid-template-columns: 43px minmax(0, 1fr) 14px;
+        column-gap: 13px;
+        padding: 19px 0;
+      }
+      .app-icon { width: 43px; height: 43px; border-radius: 12px; }
+      .app-icon img { width: 29px; height: 29px; }
+      .app-heading { gap: 3px 9px; }
+      .app-heading h2 { font-size: 16px; }
+      .description { font-size: 12px; line-height: 1.65; }
+      .category { font-size: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#appar">Hoppa till apparna</a>
+  <div class="page">
+    <nav class="topbar" aria-label="Huvudmeny">
+      <a class="wordmark" href="/" aria-label="Joar Yeah, startsida">
+        <span>joar yeah</span><span class="wordmark-dot" aria-hidden="true"></span>
+      </a>
+    </nav>
+
+    <header class="intro">
+      <h1>Tja! Jag heter Joar.</h1>
+      <p>Jag gillar att pilla med AI och göra små appar. Här hittar du dom!</p>
+    </header>
+
+    <main id="appar">
+      <ul class="app-list">
+        <li>
+          <a class="app-link" href="https://pizza-diary.lovable.app" target="_blank" rel="noopener noreferrer">
+            <span class="app-icon"><img src="pizza-diary-icon.png" alt="" width="32" height="32"></span>
+            <span class="app-copy">
+              <span class="app-heading"><h2>Pizza Diary</h2><span class="category">Verktyg</span></span>
+              <span class="description">Pizzanördarnas himmelrike. Logga dina degar, håll koll på varenda liten variabel. Ändra till nästa gång för att se förbättring.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="app-link" href="https://sparapp.joaryeah.com" target="_blank" rel="noopener noreferrer">
+            <span class="app-icon"><img src="favicon.ico" alt="" width="32" height="32"></span>
+            <span class="app-copy">
+              <span class="app-heading"><h2>Sparapp</h2><span class="category">Ekonomi</span></span>
+              <span class="description">Dreams kostar pengar. Här har du din egna manuella gratisversion som uppmanar dig att INVESTERA pengarna, inte bara ett mjäkigt sparkonto utan ränta.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="app-link" href="https://thisweek.joaryeah.com" target="_blank" rel="noopener noreferrer">
+            <span class="app-icon"><img src="https://thisweek.joaryeah.com/icon.jpg" alt="" width="32" height="32"></span>
+            <span class="app-copy">
+              <span class="app-heading"><h2>This Week</h2><span class="category">Planering</span></span>
+              <span class="description">Lite mindre kaos, en vecka i taget. Samla dina att-göra, välj en dag när det behövs och flytta resten till nästa vecka.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="app-link" href="https://milestones.joaryeah.com" target="_blank" rel="noopener noreferrer">
+            <span class="app-icon"><img src="milestones.ico" alt="" width="32" height="32" loading="lazy"></span>
+            <span class="app-copy">
+              <span class="app-heading"><h2>Milestones</h2><span class="category">Firande</span></span>
+              <span class="description">Håll koll på roliga kommande datum för dig och din familj och vänner - 10 000 dagar, en miljard sekunder och annat värt att fira.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="app-link" href="https://temailplate.joaryeah.com" target="_blank" rel="noopener noreferrer">
+            <span class="app-icon"><img src="generated-image.png" alt="" width="32" height="32" loading="lazy"></span>
+            <span class="app-copy">
+              <span class="app-heading"><h2>TeMailplate</h2><span class="category">Verktyg</span></span>
+              <span class="description">Mailmallar med utbytbara fält. Ska du skriva många snarlika mail med små ändringar? Klistra in mailet, fyll i Placeholders, kopiera, skicka, drick ditt kaffe.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="app-link" href="https://imposter.joaryeah.com" target="_blank" rel="noopener noreferrer">
+            <span class="app-icon"><img src="music-imposter.png" alt="" width="32" height="32" loading="lazy"></span>
+            <span class="app-copy">
+              <span class="app-heading"><h2>Music Imposter</h2><span class="category">Spel</span></span>
+              <span class="description">Vem känner inte av viben?</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="app-link" href="https://tagluff.joaryeah.com" target="_blank" rel="noopener noreferrer">
+            <span class="app-icon"><img src="tagluff.png" alt="" width="32" height="32" loading="lazy"></span>
+            <span class="app-copy">
+              <span class="app-heading"><h2>Tågluff</h2><span class="category">Resa</span></span>
+              <span class="description">Resplanering for tågluffsaventyr 2026. För inspo.</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </div>
+</body>
+</html>
