@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Joars appar och små projekt.">
-  <meta name="theme-color" content="#f8f7f2">
-  <title>joar yeah</title>
+  <meta name="description" content="Joars lilla hörn av internet. Små appar för vardagen, planerandet och pizzan.">
+  <meta name="theme-color" content="#f5f2eb">
+  <title>joar yeah - små saker på internet</title>
   <style>
     :root {
       color-scheme: light;
-      --paper: #f8f7f2;
-      --ink: #30332e;
-      --soft-ink: #666a61;
-      --quiet: #888b81;
-      --rule: #e5e3da;
-      --pink: #f0dfdc;
-      --green: #e1e8dc;
-      --blue: #e0e8ed;
-      --yellow: #f0e9d4;
-      --lilac: #e9e3ee;
-      --white: #fffefa;
+      --paper: #f5f2eb;
+      --ink: #272c27;
+      --muted: #686d64;
+      --quiet: #85897f;
+      --line: #deddd2;
+      --card: #fffdf8;
+      --sage: #dce6d5;
+      --rose: #f0dcd8;
+      --blue: #dce8ed;
+      --butter: #f0e6c8;
+      --lilac: #e7dfec;
+      --coral: #d66d54;
+      --radius: 22px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       background: var(--paper);
@@ -34,281 +34,307 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-
     a { color: inherit; }
-
     a:focus-visible {
-      outline: 2px solid #75856b;
-      outline-offset: 5px;
-      border-radius: 3px;
+      outline: 2px solid #718365;
+      outline-offset: 4px;
+      border-radius: 5px;
     }
-
     .skip-link {
-      position: absolute;
-      top: -60px;
-      left: 20px;
-      z-index: 2;
-      padding: 10px 12px;
-      background: var(--white);
+      position: absolute; left: 16px; top: -60px; z-index: 5;
+      padding: 10px 14px; border-radius: 8px; background: var(--card);
     }
-
     .skip-link:focus { top: 12px; }
-
-    .page {
-      width: min(100% - 64px, 760px);
-      margin-inline: auto;
+    .shell { width: min(1120px, calc(100% - 64px)); margin: 0 auto; }
+    .masthead {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 27px 0 0;
     }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 30px;
-    }
-
-    .wordmark {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: -0.45px;
+    .brand {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 15px; font-weight: 750; letter-spacing: -0.6px;
       text-decoration: none;
     }
-
-    .wordmark-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #b8c7ae;
+    .brand-mark {
+      width: 27px; height: 27px; display: grid; place-items: center;
+      border-radius: 9px 9px 9px 3px; background: var(--coral); color: #fffaf2;
+      font-size: 14px; font-weight: 800; transform: rotate(-5deg);
     }
-
-    .intro {
-      padding: 76px 0 48px;
-      max-width: 510px;
+    .top-note {
+      color: var(--muted); font-size: 12px; letter-spacing: .02em;
     }
-
+    .hero {
+      display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(220px, .7fr);
+      align-items: center; gap: 38px; padding: 84px 0 72px;
+    }
+    .eyebrow {
+      display: flex; align-items: center; gap: 10px; margin: 0 0 22px;
+      color: var(--muted); font-size: 11px; font-weight: 700;
+      letter-spacing: .13em; text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: ""; width: 25px; height: 1px; background: var(--coral);
+    }
     h1 {
-      margin: 0 0 13px;
-      font-size: clamp(34px, 5vw, 43px);
-      line-height: 1.18;
-      font-weight: 450;
-      letter-spacing: -1.5px;
+      max-width: 680px; margin: 0;
+      font-size: clamp(52px, 7.4vw, 94px); font-weight: 650;
+      line-height: .98; letter-spacing: -.075em;
     }
-
-    .intro p {
-      max-width: 365px;
-      margin: 0;
-      color: var(--soft-ink);
-      font-size: 15px;
-      line-height: 1.8;
+    h1 .soft { color: var(--coral); }
+    .hero-copy {
+      max-width: 430px; margin: 25px 0 0;
+      color: var(--muted); font-size: clamp(15px, 1.55vw, 18px);
+      line-height: 1.75;
     }
-
-    .app-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid var(--rule);
+    .hero-art {
+      position: relative; min-height: 280px; display: grid; place-items: center;
+      isolation: isolate;
     }
-
-    .app-list li { border-bottom: 1px solid var(--rule); }
-
-    .app-link {
-      display: grid;
-      grid-template-columns: 48px minmax(0, 1fr) 20px;
-      align-items: center;
-      column-gap: 21px;
-      padding: 22px 1px;
-      text-decoration: none;
+    .orbit {
+      position: absolute; width: 250px; height: 250px; border-radius: 48% 52% 63% 37% / 43% 40% 60% 57%;
+      background: var(--sage); transform: rotate(-16deg); z-index: -2;
     }
-
+    .orbit::before {
+      content: ""; position: absolute; inset: 24px -17px -9px 19px;
+      border: 1px solid #bdcbb4; border-radius: 50%; transform: rotate(22deg);
+    }
+    .orbit::after {
+      content: ""; position: absolute; width: 68px; height: 68px;
+      right: -14px; top: 6px; border-radius: 50%; background: var(--butter);
+    }
+    .note-card {
+      width: min(250px, 86%); padding: 22px 23px 24px;
+      background: var(--card); border: 1px solid rgba(39,44,39,.08);
+      border-radius: 6px 22px 22px 22px; box-shadow: 0 18px 48px rgba(48,54,43,.09);
+      transform: rotate(4deg);
+    }
+    .note-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    .note-dots { display: flex; gap: 5px; }
+    .note-dots span { width: 7px; height: 7px; border-radius: 50%; background: #d5d8cc; }
+    .note-dots span:first-child { background: var(--coral); }
+    .note-label { color: var(--quiet); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+    .note-card strong {
+      display: block; max-width: 170px; font-size: 26px; line-height: 1.08;
+      letter-spacing: -.055em; font-weight: 650;
+    }
+    .note-card p { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .spark {
+      position: absolute; color: var(--coral); font-size: 31px; line-height: 1;
+      font-weight: 400;
+    }
+    .spark-one { left: 3%; top: 19%; transform: rotate(-12deg); }
+    .spark-two { right: 4%; bottom: 15%; font-size: 22px; color: #879a7b; }
+    .apps-head {
+      display: flex; justify-content: space-between; align-items: end; gap: 20px;
+      padding: 0 0 21px; border-bottom: 1px solid var(--line);
+    }
+    .apps-head h2 {
+      margin: 0; font-size: clamp(25px, 3vw, 34px); font-weight: 620;
+      letter-spacing: -.055em;
+    }
+    .apps-head p { margin: 0 0 3px; color: var(--muted); font-size: 12px; }
+    .app-grid {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px; padding: 20px 0 0; margin: 0; list-style: none;
+    }
+    .app-card {
+      --tone: var(--rose);
+      position: relative; min-width: 0; min-height: 220px;
+      display: flex; flex-direction: column; align-items: stretch;
+      padding: 22px 23px 20px; overflow: hidden;
+      background: var(--card); border: 1px solid rgba(39,44,39,.065);
+      border-radius: var(--radius); text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+    .app-grid li:nth-child(2) .app-card { --tone: var(--sage); }
+    .app-grid li:nth-child(3) .app-card { --tone: var(--blue); }
+    .app-grid li:nth-child(4) .app-card { --tone: var(--butter); }
+    .app-grid li:nth-child(5) .app-card { --tone: var(--lilac); }
+    .app-grid li:nth-child(6) .app-card { --tone: var(--sage); }
+    .app-grid li:nth-child(7) .app-card { --tone: var(--rose); }
+    .app-card:hover {
+      transform: translateY(-3px); border-color: rgba(39,44,39,.14);
+      box-shadow: 0 12px 28px rgba(48,54,43,.055);
+    }
+    .card-top { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
     .app-icon {
-      display: grid;
-      width: 48px;
-      height: 48px;
-      place-items: center;
-      border-radius: 13px;
-      background: var(--pink);
+      display: grid; place-items: center; width: 54px; height: 54px;
+      flex: 0 0 auto; border-radius: 17px; background: var(--tone);
     }
-
-    .app-list li:nth-child(2) .app-icon { background: var(--green); }
-    .app-list li:nth-child(3) .app-icon { background: var(--blue); }
-    .app-list li:nth-child(4) .app-icon { background: var(--yellow); }
-    .app-list li:nth-child(5) .app-icon { background: var(--lilac); }
-    .app-list li:nth-child(6) .app-icon { background: var(--green); }
-    .app-list li:nth-child(7) .app-icon { background: var(--pink); }
-
     .app-icon img {
-      display: block;
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-      border-radius: 7px;
+      display: block; width: 35px; height: 35px; object-fit: contain; border-radius: 8px;
     }
-
-    .app-heading {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 5px 12px;
-      margin-bottom: 5px;
+    .app-number { color: #9b9d91; font-size: 11px; font-variant-numeric: tabular-nums; padding-top: 5px; }
+    .app-name-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 10px; margin-top: 19px; }
+    .app-name-row h3 {
+      margin: 0; font-size: 21px; line-height: 1.25; font-weight: 650;
+      letter-spacing: -.055em;
     }
-
-    .app-heading h2 {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.4;
-      font-weight: 550;
-      letter-spacing: -0.3px;
-    }
-
-    .category {
-      color: var(--quiet);
-      font-size: 11px;
-      line-height: 1.5;
-    }
-
+    .category { color: var(--quiet); font-size: 11px; }
     .description {
-      max-width: 555px;
-      margin: 0;
-      color: var(--soft-ink);
-      font-size: 13px;
-      line-height: 1.7;
+      max-width: 480px; margin: 9px 0 0; color: var(--muted);
+      font-size: 13px; line-height: 1.7;
     }
-
-    .arrow {
-      justify-self: end;
-      align-self: center;
-      color: var(--quiet);
-      font-size: 18px;
-      transition: transform 160ms ease, color 160ms ease;
+    .card-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; margin-top: auto; padding-top: 22px;
     }
-
-    .app-link:hover .arrow {
-      color: var(--ink);
-      transform: translate(2px, -2px);
+    .open-label { color: var(--quiet); font-size: 11px; }
+    .card-arrow {
+      display: grid; place-items: center; width: 29px; height: 29px;
+      border-radius: 50%; background: #f0eee7; color: var(--ink);
+      font-size: 16px; transition: background 180ms ease, transform 180ms ease;
     }
-
-    .app-link:hover .app-heading h2 {
-      text-decoration: underline;
-      text-decoration-color: #c7c5b9;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
+    .app-card:hover .card-arrow { background: var(--tone); transform: rotate(45deg); }
+    .footer {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; padding: 36px 0 30px; margin-top: 28px;
+      border-top: 1px solid var(--line); color: var(--quiet); font-size: 11px;
     }
-
-    @media (max-width: 560px) {
-      .page { width: calc(100% - 40px); }
-      .topbar { padding-top: 24px; }
-      .intro { padding: 63px 0 38px; }
-      h1 { font-size: 35px; letter-spacing: -1.15px; }
-      .intro p { max-width: 320px; font-size: 14px; }
-      .app-link {
-        grid-template-columns: 43px minmax(0, 1fr) 14px;
-        column-gap: 13px;
-        padding: 19px 0;
+    .footer-mark { color: var(--ink); font-weight: 700; letter-spacing: -.03em; }
+    @media (min-width: 900px) {
+      .app-grid li:nth-child(3) { grid-column: span 2; }
+      .app-grid li:nth-child(3) .app-card {
+        min-height: 190px; display: grid;
+        grid-template-columns: 1fr minmax(240px, .9fr); grid-template-rows: auto 1fr;
+        column-gap: 30px; padding: 25px 28px;
       }
-      .app-icon { width: 43px; height: 43px; border-radius: 12px; }
-      .app-icon img { width: 29px; height: 29px; }
-      .app-heading { gap: 3px 9px; }
-      .app-heading h2 { font-size: 16px; }
-      .description { font-size: 12px; line-height: 1.65; }
-      .category { font-size: 10px; }
+      .app-grid li:nth-child(3) .card-top { grid-column: 1; grid-row: 1; }
+      .app-grid li:nth-child(3) .app-name-row { grid-column: 1; grid-row: 2; align-self: start; margin-top: 17px; }
+      .app-grid li:nth-child(3) .description { grid-column: 2; grid-row: 1 / span 2; align-self: center; margin: 0 25px 0 0; font-size: 14px; }
+      .app-grid li:nth-child(3) .card-bottom { position: absolute; right: 27px; bottom: 22px; padding: 0; }
+      .app-grid li:nth-child(3) .app-icon { width: 59px; height: 59px; }
     }
-
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 40px, 540px); }
+      .masthead { padding-top: 21px; }
+      .top-note { font-size: 10px; }
+      .hero { grid-template-columns: 1fr; gap: 6px; padding: 66px 0 48px; }
+      h1 { font-size: clamp(54px, 12vw, 76px); }
+      .hero-copy { margin-top: 20px; font-size: 15px; }
+      .hero-art { min-height: 235px; margin-top: 6px; }
+      .orbit { width: 205px; height: 205px; }
+      .note-card { width: 220px; padding: 18px 20px 20px; }
+      .note-card strong { font-size: 23px; }
+      .spark-one { left: 12%; top: 14%; }
+      .spark-two { right: 10%; bottom: 11%; }
+      .apps-head { align-items: start; flex-direction: column; gap: 7px; }
+      .app-grid { grid-template-columns: 1fr; gap: 11px; padding-top: 14px; }
+      .app-card { min-height: 0; padding: 19px 20px 17px; border-radius: 19px; }
+      .app-name-row { margin-top: 15px; }
+      .app-name-row h3 { font-size: 20px; }
+      .description { font-size: 12px; line-height: 1.7; }
+      .card-bottom { padding-top: 17px; }
+      .footer { margin-top: 24px; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: 0.01ms !important; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#appar">Hoppa till apparna</a>
-  <div class="page">
-    <nav class="topbar" aria-label="Huvudmeny">
-      <a class="wordmark" href="/" aria-label="Joar Yeah, startsida">
-        <span>joar yeah</span><span class="wordmark-dot" aria-hidden="true"></span>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="Joar Yeah, startsida">
+        <span class="brand-mark" aria-hidden="true">j</span><span>joar yeah</span>
       </a>
-    </nav>
-
-    <header class="intro">
-      <h1>Tja! Jag heter Joar.</h1>
-      <p>Jag gillar att pilla med AI och göra små appar. Här hittar du dom!</p>
+      <span class="top-note">Ett litet hörn av internet ↘</span>
     </header>
 
-    <main id="appar">
-      <ul class="app-list">
-        <li>
-          <a class="app-link" href="https://pizza-diary.lovable.app" target="_blank" rel="noopener noreferrer">
-            <span class="app-icon"><img src="pizza-diary-icon.png" alt="" width="32" height="32"></span>
-            <div class="app-copy">
-              <div class="app-heading"><h2>Pizza Diary</h2><span class="category">Verktyg</span></div>
-              <span class="description">Pizzanördarnas himmelrike. Logga dina degar, håll koll på varenda liten variabel. Ändra till nästa gång för att se förbättring.</span>
+    <main>
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="hero-text">
+          <p class="eyebrow">Hej, vad kul att du hittade hit</p>
+          <h1 id="intro-title">Tja! Jag heter <span class="soft">Joar.</span></h1>
+          <p class="hero-copy">Jag gillar att pilla med AI och bygga små appar som gör vardagen lite roligare, enklare eller mer organiserad. Här har jag samlat dom.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <span class="spark spark-one">✳</span>
+          <div class="orbit"></div>
+          <div class="note-card">
+            <div class="note-top">
+              <span class="note-dots"><span></span><span></span><span></span></span>
+              <span class="note-label">Påhitt & projekt</span>
             </div>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
-        <li>
-          <a class="app-link" href="https://sparapp.joaryeah.com" target="_blank" rel="noopener noreferrer">
-            <span class="app-icon"><img src="favicon.ico" alt="" width="32" height="32"></span>
-            <div class="app-copy">
-              <div class="app-heading"><h2>Sparapp</h2><span class="category">Ekonomi</span></div>
-              <span class="description">Dreams kostar pengar. Här har du din egna manuella gratisversion som uppmanar dig att INVESTERA pengarna, inte bara ett mjäkigt sparkonto utan ränta.</span>
-            </div>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
-        <li>
-          <a class="app-link" href="https://thisweek.joaryeah.com" target="_blank" rel="noopener noreferrer">
-            <span class="app-icon"><img src="https://thisweek.joaryeah.com/icon.jpg" alt="" width="32" height="32"></span>
-            <div class="app-copy">
-              <div class="app-heading"><h2>This Week</h2><span class="category">Planering</span></div>
-              <span class="description">Lite mindre kaos, en vecka i taget. Samla dina att-göra, välj en dag när det behövs och flytta resten till nästa vecka.</span>
-            </div>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
-        <li>
-          <a class="app-link" href="https://milestones.joaryeah.com" target="_blank" rel="noopener noreferrer">
-            <span class="app-icon"><img src="milestones.ico" alt="" width="32" height="32" loading="lazy"></span>
-            <div class="app-copy">
-              <div class="app-heading"><h2>Milestones</h2><span class="category">Firande</span></div>
-              <span class="description">Håll koll på roliga kommande datum för dig och din familj och vänner - 10 000 dagar, en miljard sekunder och annat värt att fira.</span>
-            </div>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
-        <li>
-          <a class="app-link" href="https://temailplate.joaryeah.com" target="_blank" rel="noopener noreferrer">
-            <span class="app-icon"><img src="generated-image.png" alt="" width="32" height="32" loading="lazy"></span>
-            <div class="app-copy">
-              <div class="app-heading"><h2>TeMailplate</h2><span class="category">Verktyg</span></div>
-              <span class="description">Mailmallar med utbytbara fält. Ska du skriva många snarlika mail med små ändringar? Klistra in mailet, fyll i Placeholders, kopiera, skicka, drick ditt kaffe.</span>
-            </div>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
-        <li>
-          <a class="app-link" href="https://imposter.joaryeah.com" target="_blank" rel="noopener noreferrer">
-            <span class="app-icon"><img src="music-imposter.png" alt="" width="32" height="32" loading="lazy"></span>
-            <div class="app-copy">
-              <div class="app-heading"><h2>Music Imposter</h2><span class="category">Spel</span></div>
-              <span class="description">Vem känner inte av viben?</span>
-            </div>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
-        <li>
-          <a class="app-link" href="https://tagluff.joaryeah.com" target="_blank" rel="noopener noreferrer">
-            <span class="app-icon"><img src="tagluff.png" alt="" width="32" height="32" loading="lazy"></span>
-            <div class="app-copy">
-              <div class="app-heading"><h2>Tågluff</h2><span class="category">Resa</span></div>
-              <span class="description">Resplanering for tågluffsaventyr 2026. För inspo.</span>
-            </div>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
-      </ul>
+            <strong>Små idéer.<br>Riktiga grejer.</strong>
+            <p>Byggda av nyfikenhet och lite för mycket kaffe.</p>
+          </div>
+          <span class="spark spark-two">✳</span>
+        </div>
+      </section>
+
+      <section id="appar" aria-labelledby="apps-title">
+        <div class="apps-head">
+          <h2 id="apps-title">Saker jag byggt</h2>
+          <p>07 projekt <span aria-hidden="true">·</span> välj en och kika runt</p>
+        </div>
+        <ul class="app-grid">
+          <li>
+            <a class="app-card" href="https://pizza-diary.lovable.app" target="_blank" rel="noopener noreferrer">
+              <span class="card-top"><span class="app-icon"><img src="pizza-diary-icon.png" alt="" width="35" height="35"></span><span class="app-number">01 / 07</span></span>
+              <span class="app-name-row"><h3>Pizza Diary</h3><span class="category">Verktyg</span></span>
+              <p class="description">Pizzanördarnas himmelrike. Logga dina degar, håll koll på varenda liten variabel. Ändra till nästa gång för att se förbättring.</p>
+              <span class="card-bottom"><span class="open-label">Öppna projektet</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="app-card" href="https://sparapp.joaryeah.com" target="_blank" rel="noopener noreferrer">
+              <span class="card-top"><span class="app-icon"><img src="favicon.ico" alt="" width="35" height="35"></span><span class="app-number">02 / 07</span></span>
+              <span class="app-name-row"><h3>Sparapp</h3><span class="category">Ekonomi</span></span>
+              <p class="description">Dreams kostar pengar. Här har du din egna manuella gratisversion som uppmanar dig att INVESTERA pengarna, inte bara ett mjäkigt sparkonto utan ränta.</p>
+              <span class="card-bottom"><span class="open-label">Öppna projektet</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="app-card" href="https://thisweek.joaryeah.com" target="_blank" rel="noopener noreferrer">
+              <span class="card-top"><span class="app-icon"><img src="https://thisweek.joaryeah.com/icon.jpg" alt="" width="35" height="35"></span><span class="app-number">03 / 07</span></span>
+              <span class="app-name-row"><h3>This Week</h3><span class="category">Planering</span></span>
+              <p class="description">Lite mindre kaos, en vecka i taget. Samla dina att-göra, välj en dag när det behövs och flytta resten till nästa vecka.</p>
+              <span class="card-bottom"><span class="open-label">Öppna projektet</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="app-card" href="https://milestones.joaryeah.com" target="_blank" rel="noopener noreferrer">
+              <span class="card-top"><span class="app-icon"><img src="milestones.ico" alt="" width="35" height="35" loading="lazy"></span><span class="app-number">04 / 07</span></span>
+              <span class="app-name-row"><h3>Milestones</h3><span class="category">Firande</span></span>
+              <p class="description">Håll koll på roliga kommande datum för dig och din familj och vänner - 10 000 dagar, en miljard sekunder och annat värt att fira.</p>
+              <span class="card-bottom"><span class="open-label">Öppna projektet</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="app-card" href="https://temailplate.joaryeah.com" target="_blank" rel="noopener noreferrer">
+              <span class="card-top"><span class="app-icon"><img src="generated-image.png" alt="" width="35" height="35" loading="lazy"></span><span class="app-number">05 / 07</span></span>
+              <span class="app-name-row"><h3>TeMailplate</h3><span class="category">Verktyg</span></span>
+              <p class="description">Mailmallar med utbytbara fält. Ska du skriva många snarlika mail med små ändringar? Klistra in mailet, fyll i Placeholders, kopiera, skicka, drick ditt kaffe.</p>
+              <span class="card-bottom"><span class="open-label">Öppna projektet</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="app-card" href="https://imposter.joaryeah.com" target="_blank" rel="noopener noreferrer">
+              <span class="card-top"><span class="app-icon"><img src="music-imposter.png" alt="" width="35" height="35" loading="lazy"></span><span class="app-number">06 / 07</span></span>
+              <span class="app-name-row"><h3>Music Imposter</h3><span class="category">Spel</span></span>
+              <p class="description">Vem känner inte av viben?</p>
+              <span class="card-bottom"><span class="open-label">Öppna projektet</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="app-card" href="https://tagluff.joaryeah.com" target="_blank" rel="noopener noreferrer">
+              <span class="card-top"><span class="app-icon"><img src="tagluff.png" alt="" width="35" height="35" loading="lazy"></span><span class="app-number">07 / 07</span></span>
+              <span class="app-name-row"><h3>Tågluff</h3><span class="category">Resa</span></span>
+              <p class="description">Resplanering for tågluffsaventyr 2026. För inspo.</p>
+              <span class="card-bottom"><span class="open-label">Öppna projektet</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            </a>
+          </li>
+        </ul>
+      </section>
     </main>
+
+    <footer class="footer">
+      <span class="footer-mark">joar yeah</span>
+      <span>Gjort med nyfikenhet och kaffe.</span>
+    </footer>
   </div>
 </body>
 </html>
